@@ -1,0 +1,155 @@
+/* The landing page (the user, 2026-10-29): the words stay where they are, the paintings bounce round the screen as a TV's
+   logo does; every word black, white wherever a painting lies over it, to the pixel (landing.js: each painting carries a
+   white copy of the words, its frame clipping that copy to its own shape). The app's typeface (DESIGN.md § Typography).
+   The title in the top left corner, the two truths in the middle, the download words in the bottom right corner, its
+   mirror; on a phone all three down the middle of the screen. The app's icon travels above everything, the star */
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 400 800; font-display: swap;
+  src: url("fonts/eb-garamond-latin-wght-normal-5.3.0.woff2") format("woff2"); }
+
+:root {
+  --line: #EDF0F7;
+  --lift: 0 1px 6px rgba(46, 52, 72, 0.16);
+  --gold: 226, 172, 62; /* the paintings' gold (Apollo's sun, Saraswati's border, the Ghent angels' brocade), for rgba() */
+  --font: "EB Garamond", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --m: clamp(20px, 4vw, 72px); /* the margin round the screen's edge */
+  /* one size for every word, as large as the screen allows (the user, 2026-10-30: "make all text bigger without putting
+     each text box too close together"): never so wide that the second truth's first line (19.03em, centred, its circled
+     numeral hanging 2.25em to the left of it, so 23.6em across) leaves the screen, never so tall that the title, the
+     truths and the download words (8.5em of lines) keep less than 1.5em between them */
+  --size: min(clamp(26px, 4vw, 72px), calc((100vw - 2 * var(--m)) / 23.6), calc((100vh - 2 * var(--m)) / 11.5));
+  --icon: clamp(140px, 15vw, 260px); /* the app's icon, the screen's star */
+  --foot: 0px; /* room kept under the bottom box (a phone's links) */
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #FFFFFF; }
+html { -webkit-text-size-adjust: 100%; }
+body { color: #000000; font: 400 var(--size)/1.25 var(--font); }
+h1, p, ol, figure { margin: 0; font: inherit; }
+a { color: inherit; }
+
+.stage { position: fixed; inset: 0; overflow: hidden; }
+
+/* the words: one size; the copies inside the paintings are laid out by these same rules in a box the stage's size, so
+   they lie exactly over these */
+.words { position: absolute; inset: 0; }
+.title, .truths, .call { position: absolute; }
+.title { left: var(--m); top: calc(env(safe-area-inset-top) + var(--m)); white-space: nowrap; }
+.truths { /* the two as one block in the middle, halfway between the title and the download words, their lines to the
+  left; each numeral hangs to the left */
+  left: 50%; top: calc(50% - 0.625em + (env(safe-area-inset-top) - env(safe-area-inset-bottom) - var(--foot)) / 2);
+  transform: translate(-50%, -50%); width: max-content;
+  padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1em;
+}
+.truth { position: relative; }
+.truth span { white-space: nowrap; } /* the first one line, the second two, its second from "not" */
+.ph { display: none; } /* a phone's own line breaks */
+.num { /* a circle's line round it (the user: "put a circle line around each number (not a disc)"), centred on its
+  truth's first line */
+  position: absolute; right: calc(100% + 0.9em); top: -0.05em; width: 1.35em; height: 1.35em;
+  display: flex; align-items: center; justify-content: center; border: max(1.5px, 0.055em) solid; border-radius: 50%;
+  font-weight: 700; line-height: 1; font-variant-numeric: lining-nums;
+}
+.call { /* the title's mirror in the bottom right corner: two lines, the second from "let", to the left */
+  right: var(--m); bottom: calc(env(safe-area-inset-bottom) + var(--m) + var(--foot)); white-space: nowrap;
+}
+.call a { text-decoration: none; } /* the download words lead to the App Store too */
+.links { position: absolute; left: var(--m); bottom: calc(env(safe-area-inset-bottom) + 14px); font-size: 15px; white-space: nowrap; }
+
+/* the paintings: never stretched, above the words, under the icon; a tap goes through them */
+.art {
+  position: absolute; left: 0; top: 0; z-index: 1; overflow: hidden; pointer-events: none;
+  will-change: transform; box-shadow: var(--lift);
+}
+.art img { display: block; width: 100%; height: auto; }
+.dance { width: min(46vw, 900px); }
+.egypt { width: min(28vw, 500px); }
+.saraswati { width: min(19vw, 340px); }
+.ghent { width: min(11vw, 200px); border-radius: 50% 50% 0 0 / 22.4% 22.4% 0 0; box-shadow: none; } /* the panel's arch */
+.apollo { width: min(15vw, 280px); }
+.angels { width: min(24vw, 520px); z-index: 2; }
+
+/* the white copy each painting carries */
+.ink {
+  position: absolute; left: 0; top: 0; color: #FFFFFF; user-select: none; -webkit-user-select: none;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+}
+.ink .num { box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), inset 0 0 5px rgba(0, 0, 0, 0.3); } /* its circle as legible */
+
+/* the app's icon, the star: it travels the screen too (landing.js, always turned back by an edge), above everything, so
+   nothing ever covers it; its frame moves, the icon in it grows */
+.star { position: absolute; left: 0; top: 0; z-index: 10; will-change: transform; }
+/* its aura (the user: "make a blue aura exude out of the hum logo", then "make the glow of the hum box fainter and add
+   motion to it ... make the glow a golden hue instead to mimic the colors of the moving pictures"): the paintings' gold,
+   soft, breathing out from behind it, a sun's rays turning slowly round it, both swelling while it has the eye */
+.star::before, .star::after {
+  content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; transition: transform 200ms ease;
+}
+.star::before {
+  inset: -42%;
+  background: radial-gradient(closest-side, rgba(var(--gold), 0.5) 50%, rgba(var(--gold), 0.28) 66%, rgba(var(--gold), 0.09) 84%, rgba(var(--gold), 0) 100%);
+  filter: blur(18px); animation: aura 3.2s ease-in-out infinite;
+}
+.star::after {
+  inset: -62%;
+  background: repeating-conic-gradient(rgba(var(--gold), 0) 0deg, rgba(var(--gold), 0.34) 7.5deg, rgba(var(--gold), 0) 15deg);
+  -webkit-mask-image: radial-gradient(closest-side, transparent 42%, #000 56%, transparent 100%);
+  mask-image: radial-gradient(closest-side, transparent 42%, #000 56%, transparent 100%);
+  animation: rays 40s linear infinite, shimmer 2.6s ease-in-out infinite alternate;
+}
+@keyframes aura { 0%, 100% { scale: 0.92; opacity: 0.6; } 50% { scale: 1.1; opacity: 0.9; } }
+@keyframes rays { to { rotate: 360deg; } }
+@keyframes shimmer { from { opacity: 0.5; } to { opacity: 1; } }
+/* its trail (the user: "the aura should additionally leave a faint trail behind it to model propulsion"): landing.js
+   leaves soft gold glows where it has just been, each smaller and fainter the longer ago; above the paintings, under it */
+.trail { position: absolute; inset: 0; z-index: 9; pointer-events: none; }
+.trail i {
+  position: absolute; left: 0; top: 0; border-radius: 50%; will-change: transform;
+  background: radial-gradient(closest-side, rgba(var(--gold), 0.5), rgba(var(--gold), 0.2) 55%, rgba(var(--gold), 0));
+}
+.icon {
+  display: block; width: var(--icon); height: var(--icon); border-radius: 22.5%; overflow: hidden;
+  box-shadow: 0 0 0 1px var(--line), 0 0 24px 6px rgba(var(--gold), 0.35), var(--lift); transition: transform 200ms ease, box-shadow 200ms ease;
+}
+.icon img { display: block; width: 100%; height: 100%; }
+.icon:active { transform: scale(0.97); }
+.words, .art { transition: opacity 200ms ease; }
+/* a pointer over the icon, or over the download words (their own the icon's), or the keyboard on the icon: the icon grows
+   and everything else steps back, so it has the eye */
+@media (hover: hover) {
+  .icon:hover, .stage:has(.words:not(.ink) .call:hover) .icon { transform: scale(1.14); box-shadow: 0 0 0 1px var(--line), 0 0 36px rgba(var(--gold), 0.45), 0 12px 36px rgba(46, 52, 72, 0.3); }
+  .star:has(.icon:hover)::before, .star:has(.icon:hover)::after,
+  .stage:has(.words:not(.ink) .call:hover) .star::before, .stage:has(.words:not(.ink) .call:hover) .star::after { transform: scale(1.25); }
+  .stage:has(.icon:hover) :is(.words, .art), .stage:has(.words:not(.ink) .call:hover) :is(.words, .art) { opacity: 0.3; }
+}
+.icon:focus-visible { outline: none; transform: scale(1.14); box-shadow: 0 0 0 2px #2765F8, 0 0 0 5px #E6F1FD, 0 12px 36px rgba(46, 52, 72, 0.3); }
+.stage:has(.icon:focus-visible) :is(.words, .art) { opacity: 0.3; }
+
+/* a phone or a narrow window (the user, 2026-10-30: "on phone ... all text should be in the center"): the title, the
+   truths and the download words each in the middle of the screen's width, their lines to the left; the truths broken
+   where a phone breaks them, each numeral before its first line; one size, as large as the longest line, the second
+   truth's first (10.39em after its circle's 1.95em), and the height (10.8em of lines, an em at least between) allow; the
+   paintings larger to the screen */
+@media (max-width: 760px) {
+  :root {
+    --m: 6vw; --foot: 30px; --icon: 32vw;
+    --size: min(34px, calc((100vw - 2 * var(--m)) / 12.4), calc((100vh - 2 * var(--m) - var(--foot)) / 12.8));
+  }
+  .title, .call, .links { left: 50%; right: auto; transform: translateX(-50%); }
+  .ph { display: inline; }
+  .truths { gap: 0.8em; }
+  .truth { display: flex; align-items: flex-start; gap: 0.6em; }
+  .num { position: static; flex: none; margin-top: -0.05em; }
+  .dance { width: 80vw; }
+  .egypt { width: 54vw; }
+  .saraswati { width: 36vw; }
+  .ghent { width: 22vw; }
+  .apollo { width: 34vw; }
+  .angels { width: 56vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .icon:active, .icon:hover, .icon:focus-visible, .stage .icon { transform: none !important; }
+  .star::before, .star::after { animation: none; }
+  .trail { display: none; }
+}
