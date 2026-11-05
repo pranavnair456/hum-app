@@ -18,7 +18,7 @@
      truths and the download words (8.5em of lines) keep less than 1.5em between them */
   --size: min(clamp(26px, 4vw, 72px), calc((100vw - 2 * var(--m)) / 23.6), calc((100vh - 2 * var(--m)) / 11.5));
   --icon: clamp(140px, 15vw, 260px); /* the app's icon, the screen's star */
-  --foot: 0px; /* room kept under the bottom box (a phone's links) */
+  --foot: 0px; /* room kept under the bottom box (a phone's links, until decision 469 moved them to the bar) */
 }
 
 * { box-sizing: border-box; }
@@ -54,7 +54,6 @@ a { color: inherit; }
   right: var(--m); bottom: calc(env(safe-area-inset-bottom) + var(--m) + var(--foot)); white-space: nowrap;
 }
 .call a { text-decoration: none; } /* the download words lead to the App Store too */
-.links { position: absolute; left: var(--m); bottom: calc(env(safe-area-inset-bottom) + 14px); font-size: 15px; white-space: nowrap; }
 
 /* the paintings: never stretched, above the words, under the icon; a tap goes through them */
 .art {
@@ -132,10 +131,10 @@ a { color: inherit; }
    paintings larger to the screen */
 @media (max-width: 760px) {
   :root {
-    --m: 6vw; --foot: 30px; --icon: 32vw;
+    --m: 6vw; --icon: 32vw;
     --size: min(34px, calc((100vw - 2 * var(--m)) / 12.4), calc((100vh - 2 * var(--m) - var(--foot)) / 12.8));
   }
-  .title, .call, .links { left: 50%; right: auto; transform: translateX(-50%); }
+  .title, .call { left: 50%; right: auto; transform: translateX(-50%); }
   .ph { display: inline; }
   .truths { gap: 0.8em; }
   .truth { display: flex; align-items: flex-start; gap: 0.6em; }

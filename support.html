@@ -3,38 +3,55 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'">
-<title>HUM: Support</title>
-<link rel="stylesheet" href="style.css">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'self'">
+<title data-w="site.support.title">HUM: Support</title>
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="doc">
+<header class="bar"><div class="bar-in">
+  <a class="brand" href="./" aria-label="HUM" data-w-label="site.nav.brand"><svg class="mark" viewBox="135 384 754 256" aria-hidden="true" focusable="false"><path fill="currentColor" d="M135 438h23v202h-23zM284 438h23v202h-23zM158 528h126v22H158zM717 640V438l86 154.67L889 438v202h-23V526.7L803 640l-63-113.3V640z"/><rect fill="currentColor" x="384" y="520" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="520" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 492.5a98 98 0 0 1 196 0"/></svg></a>
+  <nav class="tabs"><a data-w="site.nav.home" href="./">Home</a><a data-w="site.nav.about" href="about">About</a><a data-w="site.nav.privacy" href="privacy">Privacy</a><a data-w="site.nav.support" href="support" aria-current="page">Support</a></nav>
+  <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
+</div></header>
 <main>
-<nav><a href="index.html">HUM</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
-<h1>Support</h1>
-<p class="muted">HUM – Voice to Notes</p>
-
-<h2>Get help</h2>
-<p>Email <a href="mailto:creator@hummusic.app">creator@hummusic.app</a> with what happened, your iPhone
-model and iOS version, and a screenshot if you can. We answer every message.</p>
-
-<h2>Common questions</h2>
-<p><strong>HUM doesn't hear me.</strong> Check that HUM may use the microphone: Settings › Privacy &amp;
-Security › Microphone › HUM. Hum close to the phone in a quiet room.</p>
-<p><strong>"Can't reach HUM".</strong> HUM turns your hum into notes on its servers, so recording needs
-an internet connection. Your saved hums still open, play and edit offline.</p>
-<p><strong>Moving to a new phone.</strong> In the menu, tap "Export", choose "HUM Backup" with every HUM picked
-and save the file. On the new phone, tap "Import" in the menu and pick it.</p>
-
-<h2>Privacy</h2>
-<p>See the <a href="privacy.html">Privacy Policy</a>.</p>
-
-<h2>Credits</h2>
-<p class="muted">The paintings on the home page, all in the public domain: Nicolas Poussin, A Dance to the Music of
-Time (c. 1634–36); Raja Ravi Varma, Saraswati (1896); Hubert and Jan van Eyck, the singing angels of the Ghent
-Altarpiece (1432); musicians from an ancient Egyptian tomb painting; three angels singing; Apollo driving the chariot of the sun, a
-hand-coloured print.</p>
-<p class="muted"><a href="https://www.flaticon.com/free-icons/media" title="media icons" target="_blank" rel="noopener">Media icons created by IconPai - Flaticon</a><br>
-<a href="https://www.flaticon.com/free-icons/relationship" title="relationship icons" target="_blank" rel="noopener">Relationship icons created by BomSymbols - Flaticon</a></p>
+<div class="doc-hero">
+<h1 data-w="site.support.heading">Support</h1>
+<p data-w="site.support.subtitle" class="muted">HUM – Voice to Notes</p>
+</div>
+<div class="doc-body">
+<section class="doc-card">
+<h2 data-w="site.support.help.title">Get help</h2>
+<p data-w="site.support.help.1">Email <a href="mailto:creator@hummusic.app">creator@hummusic.app</a> with what happened, your iPhone model and iOS version, and a screenshot if you can. We answer every message.</p>
+</section>
+<section class="doc-card">
+<h2 data-w="site.support.questions.title">Common questions</h2>
+<p data-w="site.support.questions.1"><strong>HUM doesn't hear me.</strong> Check that HUM may use the microphone: Settings › Privacy &amp; Security › Microphone › HUM. Hum close to the phone in a quiet room.</p>
+<p data-w="site.support.questions.2"><strong>"Can't reach HUM".</strong> HUM turns your hum into notes with or without a connection. Your saved hums open, play and edit offline too; sharing needs a connection.</p>
+</section>
+<section class="doc-card">
+<h2 data-w="site.support.privacy.title">Privacy</h2>
+<p data-w="site.support.privacy.1">See the <a href="privacy.html">Privacy Policy</a>.</p>
+</section>
+<section class="doc-card">
+<h2 data-w="site.support.credits.title">Credits</h2>
+<p data-w="site.support.credits.1" class="muted">The paintings on the home page, all in the public domain: Nicolas Poussin, A Dance to the Music of Time (c. 1634–36); Raja Ravi Varma, Saraswati (1896); Hubert and Jan van Eyck, the singing angels of the Ghent Altarpiece (1432); musicians from an ancient Egyptian tomb painting; three angels singing; Apollo driving the chariot of the sun, a hand-coloured print.</p>
+<p class="muted"><a data-w="site.support.credits.2" href="https://www.flaticon.com/free-icons/media" title="media icons" target="_blank" rel="noopener">Media icons created by IconPai - Flaticon</a><br>
+<a data-w="site.support.credits.3" href="https://www.flaticon.com/free-icons/relationship" title="relationship icons" target="_blank" rel="noopener">Relationship icons created by BomSymbols - Flaticon</a></p>
+</section>
+</div>
 </main>
+<footer class="foot"><div class="foot-in">
+  <div class="foot-brand">
+    <a class="brand" href="./" aria-label="HUM" data-w-label="site.nav.brand"><svg class="mark" viewBox="135 384 754 256" aria-hidden="true" focusable="false"><path fill="currentColor" d="M135 438h23v202h-23zM284 438h23v202h-23zM158 528h126v22H158zM717 640V438l86 154.67L889 438v202h-23V526.7L803 640l-63-113.3V640z"/><rect fill="currentColor" x="384" y="520" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="520" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 492.5a98 98 0 0 1 196 0"/></svg></a>
+    <p data-w="site.foot.download">Download HUM</p>
+    <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
+  </div>
+  <div><h3 data-w="site.foot.legal">Legal</h3><ul><li><a data-w="site.foot.privacy" href="privacy">Privacy Policy</a></li></ul></div>
+  <div><h3 data-w="site.foot.company">Company</h3><ul><li><a data-w="site.nav.about" href="about">About</a></li><li><a data-w="site.nav.support" href="support">Support</a></li><li><a data-w="site.foot.contact" href="mailto:creator@hummusic.app">Contact</a></li></ul></div>
+  <div class="foot-end"><span data-w="site.foot.copyright">© 2026 HUM</span><a data-w="site.foot.email" href="mailto:creator@hummusic.app">creator@hummusic.app</a></div>
+</div></footer>
+<script src="site.js"></script>
 </body>
 </html>

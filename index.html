@@ -3,33 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self' 'sha256-wXwuVkff02K7PuhX81eaKwOkyYIY31/TtEjYzaNCnHE=' https://t.whop.tw; connect-src https://t.whop.tw; worker-src blob:">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'self' 'sha256-wXwuVkff02K7PuhX81eaKwOkyYIY31/TtEjYzaNCnHE=' https://t.whop.tw; connect-src https://t.whop.tw; worker-src blob:">
 <meta name="color-scheme" content="light">
-<meta data-w-content="site.landing.description" name="description" content="download HUM, let your voice come to life.">
-<title data-w="site.landing.title">HUM</title>
-<link rel="preload" href="fonts/eb-garamond-latin-wght-normal-5.3.0.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="landing.css">
+<meta data-w-content="site.home.description" name="description" content="Capture your musical ideas and build on them effortlessly.">
+<title data-w="site.home.title">HUM - Your Music, Your Voice</title>
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
 <script>!function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");whop.setScope("biz_SLy0ROBUrlgRk1");whop.track("page");</script>
 </head>
-<body>
-<main class="stage">
-  <div class="words">
-    <h1 data-w="site.landing.heading" class="title">there are 2 truths in this world</h1>
-    <ol class="truths">
-      <li class="truth"><b class="num">1</b><span data-w="site.landing.truth1">the Human Voice is the <br class="ph">primordial instrument</span></li>
-      <li class="truth"><b class="num">2</b><span data-w="site.landing.truth2">technology is a tool to serve <br class="ph">The Human Creative,<br> <em>not</em> the other way around</span></li>
-    </ol>
-    <p class="call"><a data-w="site.landing.cta" href="https://apps.apple.com/us/app/hum-voice-to-notes/id6820010168">download HUM,<br> let your voice come to life.</a></p>
-    <p class="links"><a data-w="site.nav.privacy" href="privacy.html">Privacy</a> · <a data-w="site.nav.support" href="support.html">Support</a></p>
+<body class="home">
+<header class="bar"><div class="bar-in">
+  <a class="brand" href="./" aria-label="HUM" data-w-label="site.nav.brand"><svg class="mark" viewBox="135 384 754 256" aria-hidden="true" focusable="false"><path fill="currentColor" d="M135 438h23v202h-23zM284 438h23v202h-23zM158 528h126v22H158zM717 640V438l86 154.67L889 438v202h-23V526.7L803 640l-63-113.3V640z"/><rect fill="currentColor" x="384" y="520" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="520" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 492.5a98 98 0 0 1 196 0"/></svg></a>
+  <nav class="tabs"><a data-w="site.nav.home" href="./" aria-current="page">Home</a><a data-w="site.nav.about" href="about">About</a><a data-w="site.nav.privacy" href="privacy">Privacy</a><a data-w="site.nav.support" href="support">Support</a></nav>
+  <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div>
+    <h1><span data-w="site.home.heading">Meet HUM</span><span class="tint" data-w="site.home.heading2">Your Music, Your Voice</span></h1>
+    <p class="lede" data-w="site.home.lede">Effortlessly turn your voice into notes, then build your ideas into a full song.</p>
+    <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
+    <a class="policy" href="about"><span data-w="site.home.policy">Anti Gen-AI Policy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
-  <figure class="art dance" data-x="0.30" data-y="0.22" data-px="0.36" data-py="0.40" data-vx="36" data-vy="27"><img data-w-alt="site.landing.art1" src="art/dance.jpg" width="900" height="695" alt="A Dance to the Music of Time by Nicolas Poussin: four figures dance in a ring while Father Time plays the lyre"></figure>
-  <figure class="art egypt" data-x="0.08" data-y="0.69" data-px="0.04" data-py="0.64" data-vx="-32" data-vy="-41"><img data-w-alt="site.landing.art2" src="art/egypt.jpg" width="308" height="196" alt="Musicians in an ancient Egyptian tomb painting: a harp, a lute, a dancer and a lyre"></figure>
-  <figure class="art saraswati" data-x="0.027" data-y="0.15" data-px="0.66" data-py="0.05" data-vx="46" data-vy="31"><img data-w-alt="site.landing.art3" src="art/saraswati.jpg" width="337" height="480" alt="Saraswati playing the veena beside a river, by Raja Ravi Varma"></figure>
-  <figure class="art ghent" data-x="0.835" data-y="0.055" data-px="0.04" data-py="0.26" data-vx="-29" data-vy="38"><img data-w-alt="site.landing.art4" src="art/ghent-angels.jpg" width="326" height="728" alt="The singing angels of the Ghent Altarpiece, by Hubert and Jan van Eyck"></figure>
-  <figure class="art apollo" data-x="0.60" data-y="0.04" data-px="0.30" data-py="0.16" data-vx="-40" data-vy="31"><img data-w-alt="site.landing.art5" src="art/apollo.jpg" width="520" height="770" alt="Apollo with his lyre driving the chariot of the sun, four horses on the clouds, a hand-coloured print"></figure>
-  <figure class="art angels" data-x="0.55" data-y="0.70" data-px="0.52" data-py="0.74" data-vx="42" data-vy="-33"><img data-w-alt="site.landing.art6" src="art/angels.jpg" width="624" height="340" alt="Three winged angels singing from a book"></figure>
-  <div class="star" data-x="0.56" data-y="0.62" data-px="0.08" data-py="0.70" data-vx="38" data-vy="-30"><a class="icon" href="https://apps.apple.com/us/app/hum-voice-to-notes/id6820010168"><img data-w-alt="site.landing.badge" src="hum-icon.png" width="120" height="120" alt="Download HUM on the App Store"></a></div>
+  <div class="duo">
+    <div class="phone one"><img data-w-alt="site.home.hero.hum" src="shots/hum.jpg" width="600" height="1304" alt="HUM turning a hum into notes as it is hummed"></div>
+    <svg class="arrow" viewBox="0 0 150 110" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 86c14-30 40-50 64-46 20 3 20 28 2 27-17-1-10-30 18-40 16-6 32-3 44 4"/><path d="M124 18l15 12-18 5"/></svg>
+    <div class="phone two"><img data-w-alt="site.home.hero.notes" src="shots/notes.jpg" width="600" height="1304" alt="The hummed notes in HUM's editor, one picked to move or stretch"></div>
+  </div>
+</div></section>
+
+<section class="include"><div class="wrap">
+  <h2 class="center" data-w="site.home.include.heading">What does HUM include?</h2>
+  <p class="sub center" data-w="site.home.include.sub">Hum it, shape it, share it.</p>
+  <div class="grid">
+    <div class="show">
+      <div class="phone">
+        <img class="on" data-w-alt="site.home.include.1.alt" src="shots/hum.jpg" width="600" height="1304" alt="HUM listening to a hum, its notes appearing">
+        <img data-w-alt="site.home.include.2.alt" src="shots/notes.jpg" width="600" height="1304" alt="A note picked in HUM's editor, with Cut, Copy and Delete">
+        <img data-w-alt="site.home.include.3.alt" src="shots/chords.jpg" width="600" height="1304" alt="Build Chords stacking chords under a hummed tune">
+        <img data-w-alt="site.home.include.4.alt" src="shots/instruments.jpg" width="600" height="1304" alt="HUM's instruments, Violin picked among the strings">
+        <img data-w-alt="site.home.include.5.alt" src="shots/tracks.jpg" width="600" height="1304" alt="Three tracks side by side, one of them looped">
+        <img data-w-alt="site.home.include.6.alt" src="shots/library.jpg" width="600" height="1304" alt="My HUMs: every song saved, ready to play">
+        <img data-w-alt="site.home.include.7.alt" src="shots/share.jpg" width="600" height="1304" alt="Share with Friends, Export as MIDI File and Export as Audio File">
+      </div>
+      <p class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></p>
+    </div>
+    <div class="cards">
+      <button class="card" type="button" aria-pressed="true"><h3 data-w="site.home.include.1.title">Just Hum</h3><p data-w="site.home.include.1.body">Effortlessly turn your voice into notes. Tap once to start, tap again to finish, and watch each note appear as you hum.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.2.title">Edit Every Note</h3><p data-w="site.home.include.2.body">Move it, stretch it, cut it, copy it. Every note you hum is yours to shape.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.3.title">No Music Theory Needed</h3><p data-w="site.home.include.3.body">Build chord progressions and melodies. Stack chords above your tune or layer them below it.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.4.title">Use Any Instrument</h3><p data-w="site.home.include.4.body">Synths, strings, keys, drums and more. Search for a sound, or keep your favorites a tap away.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.5.title">Add Multiple Tracks to Make a Full Song</h3><p data-w="site.home.include.5.body">Layer tracks, loop them and add drums until your idea becomes a song.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.6.title">Organize Your Ideas</h3><p data-w="site.home.include.6.body">Store as many songs as you want. Every HUM stays on your phone, ready to play back.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.7.title">Share Your Songs</h3><p data-w="site.home.include.7.body">Export as a MIDI or audio file, or share with friends so they can add their ideas to your songs.</p></button>
+    </div>
+  </div>
+</div></section>
+
+<section class="promise"><div class="wrap">
+  <div>
+    <p class="kick" data-w="site.home.promise.kicker">Our promise</p>
+    <h2 data-w="site.home.promise.heading">HUM will NEVER encourage the use of Gen-AI in the creative process.</h2>
+    <p class="body" data-w="site.home.promise.body">From the hammerstone to the space rocket, technology will always be a tool meant to serve The Human Creative. Please help us fight against fake art.</p>
+  </div>
+  <div class="phone"><img data-w-alt="site.home.promise.alt" src="shots/library.jpg" width="600" height="1304" loading="lazy" alt="My HUMs: every song saved, ready to play"></div>
+</div></section>
+
+<section class="faq"><div class="wrap">
+  <h2 class="center" data-w="site.home.faq.heading">Frequently asked questions</h2>
+  <p class="sub center" data-w="site.home.faq.sub">The questions we hear most.</p>
+  <div class="qs">
+    <details><summary data-w="site.home.faq.1.q">Does HUM use generative AI?</summary><p data-w="site.home.faq.1.a">No. Every note in HUM comes from your own voice, and every change after that is yours. HUM's tools, like Build Chords, follow the rules of music theory under your control.</p></details>
+    <details><summary data-w="site.home.faq.2.q">Do I need to know music theory?</summary><p data-w="site.home.faq.2.a">No. Hum the tune in your head and HUM writes it down as notes. Build Chords adds chords that fit it, no theory needed.</p></details>
+    <details><summary data-w="site.home.faq.3.q">Does HUM work without an internet connection?</summary><p data-w="site.home.faq.3.a">Yes. HUM turns your hum into notes with or without a connection. Your saved hums open, play and edit offline too; sharing needs a connection.</p></details>
+    <details><summary data-w="site.home.faq.4.q">HUM doesn't hear me. What can I do?</summary><p data-w="site.home.faq.4.a">Check that HUM may use the microphone: Settings › Privacy &amp; Security › Microphone › HUM. Hum close to the phone in a quiet room.</p></details>
+    <details><summary data-w="site.home.faq.5.q">Is my voice recorded or stored?</summary><p data-w="site.home.faq.5.a">When you record, HUM sends the sound to its servers, which turn it into notes. The recording is held in memory only while that happens and is not stored afterwards, unless you turn on "Help Improve HUM". See the <a href="privacy">Privacy Policy</a>.</p></details>
+    <details><summary data-w="site.home.faq.6.q">Can I use my songs in other music apps?</summary><p data-w="site.home.faq.6.a">Yes. Export any song as a MIDI file to open in another music app, or as an audio file to play anywhere.</p></details>
+  </div>
+  <p class="more"><a class="ghost" data-w="site.home.faq.more" href="support">More on Support</a></p>
+</div></section>
+
+<section class="last"><div class="wrap">
+  <svg class="mark" viewBox="135 384 754 256" aria-hidden="true" focusable="false"><path fill="currentColor" d="M135 438h23v202h-23zM284 438h23v202h-23zM158 528h126v22H158zM717 640V438l86 154.67L889 438v202h-23V526.7L803 640l-63-113.3V640z"/><rect fill="currentColor" x="384" y="520" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="520" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 492.5a98 98 0 0 1 196 0"/></svg>
+  <h2 data-w="site.home.last">download HUM, let your voice come to life.</h2>
+  <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
+</div></section>
 </main>
-<script src="landing.js"></script>
+
+<footer class="foot"><div class="foot-in">
+  <div class="foot-brand">
+    <a class="brand" href="./" aria-label="HUM" data-w-label="site.nav.brand"><svg class="mark" viewBox="135 384 754 256" aria-hidden="true" focusable="false"><path fill="currentColor" d="M135 438h23v202h-23zM284 438h23v202h-23zM158 528h126v22H158zM717 640V438l86 154.67L889 438v202h-23V526.7L803 640l-63-113.3V640z"/><rect fill="currentColor" x="384" y="520" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="520" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 492.5a98 98 0 0 1 196 0"/></svg></a>
+    <p data-w="site.foot.download">Download HUM</p>
+    <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
+  </div>
+  <div><h3 data-w="site.foot.legal">Legal</h3><ul><li><a data-w="site.foot.privacy" href="privacy">Privacy Policy</a></li></ul></div>
+  <div><h3 data-w="site.foot.company">Company</h3><ul><li><a data-w="site.nav.about" href="about">About</a></li><li><a data-w="site.nav.support" href="support">Support</a></li><li><a data-w="site.foot.contact" href="mailto:creator@hummusic.app">Contact</a></li></ul></div>
+  <div class="foot-end"><span data-w="site.foot.copyright">© 2026 HUM</span><a data-w="site.foot.email" href="mailto:creator@hummusic.app">creator@hummusic.app</a></div>
+</div></footer>
+<script src="site.js"></script>
 </body>
 </html>
