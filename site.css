@@ -111,6 +111,11 @@ section { padding: 96px 0; }
 /* the hero: words on the left; the singer, the hum and its notes on the right, drawn arrows between */
 .hero { padding: 72px 0 104px; background: radial-gradient(900px 520px at 78% 10%, rgba(39, 101, 248, 0.12), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, #F2F6FF 0%, #FFFFFF 100%); overflow: hidden; }
 .hero .wrap { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 32px; align-items: center; }
+/* the words keep the bar's left edge; the singer and the screens run on toward the window's right edge (the user,
+   2026-11-05: "move the singer and preview screenshotes to the right") */
+@media (min-width: 961px) {
+  .hero .wrap { max-width: none; padding-left: max(var(--gut), calc((100% - var(--wide)) / 2 + var(--gut))); padding-right: clamp(var(--gut), 4vw, 64px); }
+}
 /* the store subtitle under the hero's badges, large, in the heading's blue; it opens About (the user, 2026-11-05: "Make
    anti gen ai policy large text and not in a pill button. clicking on the anti gen ai policy should rerout to the about
    tab"; "make anti gen ai policy the same blue color as the other font. put it under the download buttons") */
