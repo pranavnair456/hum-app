@@ -173,7 +173,20 @@ section { padding: 96px 0; }
 .card p { margin-top: 4px; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .card[aria-pressed="true"] { background: var(--soft); border-color: var(--blue); }
 .card[aria-pressed="true"] h3 { color: var(--blue); }
-@media (max-width: 960px) { .include .grid { grid-template-columns: 1fr; gap: 36px; } .show .phone { width: min(70vw, 300px); } }
+/* a phone's width (the user: "why cant i see the other previews"): stacked, a card's screen changed on a phone scrolled
+   out of sight; now the phone keeps its own column beside the cards and stays in view while they scroll */
+@media (max-width: 960px) {
+  .include .grid { grid-template-columns: 38% 1fr; gap: 14px; align-items: start; margin-top: 36px; }
+  .show { position: sticky; top: calc(var(--bar-h) + 16px); gap: 12px; }
+  .show .phone { width: 100%; padding: 6px; border-radius: 30px; }
+  .show .phone img { inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); border-radius: 24px; }
+  .dots { gap: 5px; }
+  .dots i { width: 6px; height: 6px; }
+  .dots i.on { width: 14px; }
+  .card { padding: 12px 14px; border-radius: 16px; }
+  .card h3 { font-size: 16px; }
+  .card p { font-size: 14px; }
+}
 
 /* the promise: the app's dark end, the words left, My HUMs on a tilted phone right */
 .promise { background: radial-gradient(800px 500px at 80% 40%, rgba(39, 101, 248, 0.35), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, var(--navy-up), var(--navy)); color: #fff; overflow: hidden; }
