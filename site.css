@@ -114,7 +114,10 @@ section { padding: 96px 0; }
 /* the words keep the bar's left edge; the singer and the screens run on toward the window's right edge (the user,
    2026-11-05: "move the singer and preview screenshotes to the right") */
 @media (min-width: 961px) {
-  .hero .wrap { max-width: none; padding-left: max(var(--gut), calc((100% - var(--wide)) / 2 + var(--gut))); padding-right: clamp(var(--gut), 4vw, 64px); }
+  /* the right gap halfway between the page's edge and the window's (the user: "that was too far to the right ... the
+     middle of the 2 changes would be perfect") */
+  .hero .wrap { max-width: none; padding-left: max(var(--gut), calc((100% - var(--wide)) / 2 + var(--gut)));
+    padding-right: max(var(--gut), calc(((100% - var(--wide)) / 2 + var(--gut) + clamp(var(--gut), 4vw, 64px)) / 2)); }
 }
 /* the store subtitle under the hero's badges, large, in the heading's blue; it opens About (the user, 2026-11-05: "Make
    anti gen ai policy large text and not in a pill button. clicking on the anti gen ai policy should rerout to the about
