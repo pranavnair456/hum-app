@@ -77,6 +77,7 @@
 .foot a { color: var(--muted); text-decoration: none; }
 .foot a:hover { color: var(--blue); }
 .foot .badges { justify-self: start; }
+.foot-end .credit { font-size: 13px; }
 .foot-end {
   grid-column: 1 / -1; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
   border-top: 1px solid var(--line); padding-top: 20px; font-size: 14px;
@@ -107,9 +108,9 @@ section { padding: 96px 0; }
 }
 .phone img { display: block; width: 100%; height: 100%; border-radius: 37px; object-fit: cover; background: #fff; }
 
-/* the hero: words on the left, two phones on the right, a drawn arrow from the hum to its notes */
+/* the hero: words on the left; the singer, the hum and its notes on the right, drawn arrows between */
 .hero { padding: 72px 0 104px; background: radial-gradient(900px 520px at 78% 10%, rgba(39, 101, 248, 0.12), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, #F2F6FF 0%, #FFFFFF 100%); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: center; }
+.hero .wrap { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 32px; align-items: center; }
 /* the store subtitle under the hero's badges, large, in the heading's blue; it opens About (the user, 2026-11-05: "Make
    anti gen ai policy large text and not in a pill button. clicking on the anti gen ai policy should rerout to the about
    tab"; "make anti gen ai policy the same blue color as the other font. put it under the download buttons") */
@@ -122,25 +123,34 @@ section { padding: 96px 0; }
 .policy:hover span { text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 0.15em; }
 .policy:hover svg { transform: translateX(3px); }
 .hero .badges + .policy { display: flex; width: max-content; }
-.hero h1 { margin-top: 0; font-size: clamp(44px, 6.4vw, 80px); line-height: 1.0; font-weight: 800; letter-spacing: -0.035em; }
+.hero h1 { margin-top: 0; font-size: clamp(44px, 6vw, 76px); line-height: 1.0; font-weight: 800; letter-spacing: -0.035em; }
 .hero h1 span { display: block; text-wrap: balance; }
 .hero h1 .tint { background: linear-gradient(90deg, var(--blue-top), var(--blue-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: 0.06em; }
 .lede { margin-top: 22px; max-width: 30em; font-size: 19px; color: var(--muted); }
-.duo { position: relative; height: 640px; }
-.duo .phone { position: absolute; width: 240px; }
-.duo .one { left: 0; top: 90px; transform: rotate(-5deg); }
-.duo .two { right: 0; top: 10px; transform: rotate(5deg); }
-/* the drawn arrow in the gap over the two phones, from the hum to its notes */
-.arrow { position: absolute; z-index: 2; left: 50%; top: 0; width: 124px; height: 92px; transform: translateX(-50%); color: var(--blue); }
+/* the hero's right: one row, evenly spaced (the user, 2026-11-05: "add this icon ... make the icon the same color as the
+   blue theme, add another squiggly arrow from the singer to the first screen, and make the original squiggly arrow ...
+   spaced more evenly between the 2 screen previews"): the singer, an arrow, the hum, an arrow, its notes; each arrow
+   its own item in the row, so it sits midway between its neighbours */
+/* to the right edge, away from the words (the user: "move those 3 images together to the right to make the screen less
+   crowded") */
+.flow { display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
+.flow .singer { flex: none; width: 112px; height: auto; }
+.flow .arrow { flex: none; width: 60px; height: 42px; color: var(--blue); }
+.flow .phone { flex: none; width: 200px; }
+.flow .one { transform: rotate(-4deg); }
+.flow .two { transform: rotate(4deg); }
+.flow .a1 { transform: translateY(-18px); }
+.flow .a2 { transform: translateY(-30px); }
 @media (max-width: 960px) {
   .hero .wrap { grid-template-columns: 1fr; text-align: center; }
   .lede { margin-left: auto; margin-right: auto; }
   .hero .badges + .policy { margin-left: auto; margin-right: auto; }
-  .duo { height: auto; display: flex; justify-content: center; gap: 4%; padding-top: 40px; }
-  .duo { gap: 10vw; padding-top: 64px; align-items: flex-start; } /* each phone its own height, not the row's */
-  .duo .phone { position: relative; left: auto; right: auto; top: auto; width: min(38vw, 230px); }
-  .duo .one { margin-top: 44px; }
-  .arrow { left: 50%; top: 0; width: 96px; height: 72px; transform: translateX(-50%); }
+  /* one row inside a phone's width: 13 + 7 + 26 + 7 + 26 vw and four 1.6 vw gaps */
+  .flow { justify-content: center; gap: 1.6vw; padding-top: 48px; }
+  .flow .singer { width: min(13vw, 110px); }
+  .flow .arrow { width: min(7vw, 60px); height: auto; }
+  .flow .phone { width: min(26vw, 210px); padding: 5px; border-radius: 30px; }
+  .flow .phone img { border-radius: 25px; }
 }
 
 /* What does HUM include?: seven cards, the App Store screenshots' seven; the phone shows the screen of the card picked */
