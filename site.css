@@ -15,7 +15,7 @@
   --line: #EDF0F7;
   --row: #F5F6F7;
   --soft: #E6F1FD;
-  --green: #1CB991;
+  --blue-on-dark: #9DB8FC; /* DESIGN.md's on-primary-soft: the blue as words on the dark ground */
   --note: #A0DFD1;
   --note-line: #00AD81;
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
@@ -145,8 +145,9 @@ section { padding: 96px 0; }
 .flow .singer { flex: none; width: 112px; height: auto; }
 .flow .arrow { flex: none; width: 60px; height: 42px; color: var(--blue); }
 .flow .phone { flex: none; width: 200px; }
-.flow .one { transform: rotate(-4deg); }
-.flow .two { transform: rotate(4deg); }
+/* the two screens stand straight (the user, 2026-11-06: "why are the 2 image qualities sso different. first is far better"):
+   a 4° turn resamples every pixel, and the editor's thin grid lines and small words blur at 182 px wide on a 1x screen,
+   while the hum's few big shapes do not; upright, both are drawn pixel for pixel from the same 600 px shots */
 .flow .a1 { transform: translateY(-18px); }
 .flow .a2 { transform: translateY(-30px); }
 @media (max-width: 960px) {
@@ -197,9 +198,15 @@ section { padding: 96px 0; }
 }
 
 /* the promise: the app's dark end, the words left, My HUMs on a tilted phone right */
+/* Anti Gen-AI Policy under the hero's badges lands here (the user, 2026-11-06: "the anti gen ai policy button should route
+   to the: Our promise ... part of the page"), its top clear of the sticky bar */
+#promise { scroll-margin-top: var(--bar-h); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .promise { background: radial-gradient(800px 500px at 80% 40%, rgba(39, 101, 248, 0.35), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, var(--navy-up), var(--navy)); color: #fff; overflow: hidden; }
 .promise .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
-.kick { font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
+/* no green words on the site (the user, 2026-11-06: "change our promise font color to match the white/ blue theme. i
+   never want any green text like this on the website") */
+.kick { font-size: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-on-dark); }
 .promise h2 { margin-top: 16px; color: #fff; }
 .promise p.body { margin-top: 20px; font-size: 19px; color: #C9D4F0; max-width: 32em; }
 .promise .phone { width: 290px; justify-self: center; transform: rotate(6deg); box-shadow: 0 0 0 2px #5A5E68, 0 0 0 3px #2A2C31, 0 40px 90px rgba(0, 0, 0, 0.55); }
