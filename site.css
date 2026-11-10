@@ -118,7 +118,7 @@ section { padding: 96px 0; }
 
 /* the hero: words on the left; the mic, the hum and its notes on the right, drawn arrows between */
 .hero { padding: 72px 0 104px; background: radial-gradient(900px 520px at 78% 10%, rgba(39, 101, 248, 0.12), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, #F2F6FF 0%, #FFFFFF 100%); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 32px; align-items: center; }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 32px; align-items: center; } /* the mic gone (the user, 2026-11-10), its room the heading's: "Your Music," on one line */
 /* the words keep the bar's left edge; the mic and the screens run on toward the window's right edge (the user,
    2026-11-05: "move the singer and preview screenshotes to the right") */
 @media (min-width: 961px) {
@@ -151,21 +151,17 @@ section { padding: 96px 0; }
 /* to the right edge, away from the words (the user: "move those 3 images together to the right to make the screen less
    crowded") */
 .flow { display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
-.flow .mic { flex: none; width: 196px; height: auto; overflow: visible; }
-.mic .disc { filter: drop-shadow(0 18px 26px rgba(23, 71, 201, 0.3)); }
 .flow .arrow { flex: none; width: 60px; height: 42px; color: var(--blue); }
 .flow .phone { flex: none; width: 200px; }
 /* the two screens stand straight (the user, 2026-11-06: "why are the 2 image qualities sso different. first is far better"):
    a 4° turn resamples every pixel, and the editor's thin grid lines and small words blur at 182 px wide on a 1x screen,
    while the hum's few big shapes do not; upright, both are drawn pixel for pixel from the same 600 px shots */
-.flow .a1 { transform: translateY(-18px); }
 .flow .a2 { transform: translateY(-30px); }
 @media (max-width: 960px) {
   /* the words at the left on a phone too (the previews' rule), the pictures' row under them */
   .hero .wrap { grid-template-columns: 1fr; }
   /* one row inside a phone's width: 18 + 7 + 26 + 7 + 26 vw and four 1.6 vw gaps */
   .flow { justify-content: center; gap: 1.6vw; padding-top: 48px; }
-  .flow .mic { width: min(18vw, 170px); }
   .flow .arrow { width: min(7vw, 60px); height: auto; }
   .flow .phone { width: min(26vw, 210px); }
 }
