@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'self'; base-uri 'none'">
 <title data-w="site.privacy.title">HUM: Privacy Policy</title>
 <link rel="icon" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -18,7 +18,7 @@
 <main>
 <div class="doc-hero">
 <h1 data-w="site.privacy.heading">Privacy Policy</h1>
-<p data-w="site.privacy.subtitle" class="muted">HUM - Your Music, Your Voice · Effective October 26, 2026</p>
+<p data-w="site.privacy.subtitle" class="muted">HUM - Your Music, Your Voice · Effective November 11, 2026</p>
 </div>
 <div class="doc-body">
 <section class="doc-card">
@@ -28,17 +28,17 @@
 <section class="doc-card">
 <h2 data-w="site.privacy.improve.title">"Help Improve HUM" (Off Unless You Turn It On)</h2>
 <p data-w="site.privacy.improve.1">"Help Improve HUM" is one switch in the app's menu, also offered in the question HUM asks after your third take. Turning it on does two things: it keeps your takes (this section) and it counts how you use the app (Usage statistics, below). Turning it off stops both.</p>
-<p data-w="site.privacy.improve.2">While it is on, we keep the recording of each take you make: the few seconds of room sound before you hum, your hum, and the notes HUM found. We also keep a few technical facts about how it was recorded, such as the sample rate and the microphone settings.</p>
+<p data-w="site.privacy.improve.2">While it is on, we keep the recording of each take you make, and of a press you cancel: the few seconds of room sound before you hum, your hum, what HUM was playing while you hummed over your tracks, the notes HUM found and the words it showed you. We also keep a few technical facts about how it was recorded, such as the sample rate and the microphone settings.</p>
 <ul>
 <li data-w="site.privacy.improve.3">We use these recordings only to make HUM hear notes better, including in future versions of HUM.</li>
-<li data-w="site.privacy.improve.4">They are stored privately, are not linked to your name, account or device, and are never sold.</li>
+<li data-w="site.privacy.improve.4">They are stored privately, are not linked to your name, account or device, are never sold, and are deleted two years after they are made.</li>
 <li data-w="site.privacy.improve.5">You can turn "Help Improve HUM" off at any time in the app's menu. Takes recorded after that are not kept.</li>
 <li data-w="site.privacy.improve.6">To have kept recordings deleted, email us (see Contact) with the approximate dates and times of the takes. Because they are not linked to you, those details are how we find them.</li>
 </ul>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.saved.title">Your Saved Hums</h2>
-<p data-w="site.privacy.saved.1">The hums you save in "My HUMs" are stored only on your device, and we cannot see them, unless you share one (below). Deleting a hum, or the app, removes it from your device. "Export HUMS" creates a file that you choose where to keep.</p>
+<p data-w="site.privacy.saved.1">The hums you save in "My HUMs" are stored only on your device, and we cannot see them, unless you share one (below) or turn on Sync (below). Deleting a hum, or the app, removes it from your device. "Export HUMS" creates a file that you choose where to keep.</p>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.sharing.title">Sharing a Song With Friends</h2>
@@ -50,8 +50,18 @@
 </ul>
 </section>
 <section class="doc-card">
+<h2 data-w="site.privacy.account.title">Accounts (Only If You Sign In)</h2>
+<p data-w="site.privacy.account.1">HUM works without an account. If you choose to sign in with Apple, HUM makes an account so that Sync reaches your other devices. HUM asks Apple for no email address and no name: it keeps only a scrambled form of the number Apple gives for you, which cannot be turned back into it.</p>
+<p data-w="site.privacy.account.2">The account holds an account number HUM makes up and the devices signed in to it (three at most: what kind each is and when it was last used). Nothing else is asked for.</p>
+<p data-w="site.privacy.account.3">"Sign Out" takes one device off the account. "Delete Account" erases the account, its sign-ins, its devices and every copy kept for it; the HUMs on your devices stay.</p>
+</section>
+<section class="doc-card">
+<h2 data-w="site.privacy.sync.title">Sync Between Your Devices</h2>
+<p data-w="site.privacy.sync.1">Sync is off unless you turn it on, and needs an account (above). While it is on, a copy of each HUM in My HUMs (its notes, instruments, names and settings, never the recording of your voice or the line it draws) is kept in your account, so your other devices can show it and take your changes within seconds. When two devices change the same track, the newer change wins and the other is kept for 30 days so you can bring it back. Deleting a HUM removes its copy.</p>
+</section>
+<section class="doc-card">
 <h2 data-w="site.privacy.feedback.title">Feedback You Send</h2>
-<p data-w="site.privacy.feedback.1">If you use "Report Issues / Send Feedback", we receive what you write, the tags you pick, and a few facts that help us reproduce the problem: your device and browser type, your screen size, the time on your device, and the state of the app (for example the instrument in use and how many notes are open). Reports are anonymous and are kept as long as they help us fix HUM.</p>
+<p data-w="site.privacy.feedback.1">If you use "Report Issues / Send Feedback" or "Request Feature" from the search, we receive what you write, the tags you pick, and a few facts that help us reproduce the problem: your device and browser type, your screen size, the time on your device, and the state of the app (for example the instrument in use and how many notes are open). Reports are anonymous and are kept as long as they help us fix HUM.</p>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.usage.title">Usage Statistics (Part Of "Help Improve HUM")</h2>
@@ -66,27 +76,31 @@
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.diagnostics.title">Diagnostics</h2>
-<p data-w="site.privacy.diagnostics.1">When something goes wrong on HUM's servers, they log what failed and where, with technical details such as the app version; those logs exclude your recordings, your notes, your IP address and any account or device identifier. For each take, HUM's servers also log technical facts such as its length, how many notes were found and how long it took, but no audio and no address. The app and its page send no error reports to anyone.</p>
+<p data-w="site.privacy.diagnostics.1">When something goes wrong on HUM's servers, they log what failed and where, with technical details such as the app version; those logs exclude your recordings, your notes, your IP address and any account or device identifier. For each take, HUM's servers also keep a short record of technical facts: whether notes were found, the take's length, how long it took to turn into notes on the servers and on your phone, how closely the two agreed, and the kind of device and audio output it was made with. It holds no audio and no address, and holds notes only for a take that "Help Improve HUM" keeps. It is not linked to you, and is deleted after 13 months. The app and its page send no error reports to anyone.</p>
+</section>
+<section class="doc-card">
+<h2 data-w="site.privacy.notifications.title">Notifications (Only If You Turn Them On)</h2>
+<p data-w="site.privacy.notifications.1">If you turn on HUM's weekly reminder, your phone schedules it itself. Nothing about it is sent to us. Turn it off in HUM's menu or in your phone's Settings.</p>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.providers.title">Service Providers</h2>
-<p data-w="site.privacy.providers.1">We use a small number of providers to run HUM. They process data only on our behalf. Apple distributes HUM through the App Store and TestFlight. Cloudflare delivers the app's pages, protects and connects HUM's servers, and stores opted-in recordings, feedback, shared songs and usage statistics. Fly.io runs HUM's servers. To deliver the service, these providers process the network address your device connects from. HUM itself does not store it.</p>
+<p data-w="site.privacy.providers.1">We use a small number of providers to run HUM. They process data only on our behalf. Apple distributes HUM through the App Store and TestFlight, and confirms who you are if you sign in. Cloudflare delivers the app's pages, protects and connects HUM's servers, and stores opted-in recordings, feedback, shared songs and usage statistics, and, if you sign in, your account and the copies Sync keeps. Fly.io runs HUM's servers. To deliver the service, these providers process the network address your device connects from. HUM itself does not store it. On hummusic.app, the Home and About pages use Whop's pixel to count visits to those pages; Whop receives what your browser sends when it loads them: the page, the browser's type and the address you connect from. The HUM app itself uses no such tool.</p>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.dont.title">What We Don't Do</h2>
 <ul>
-<li data-w="site.privacy.dont.1">No accounts, and no email address or phone number asked for.</li>
-<li data-w="site.privacy.dont.2">No advertising, and no tracking of you across other apps or websites.</li>
+<li data-w="site.privacy.dont.1">No account unless you choose to sign in, and HUM never asks for your email address or phone number.</li>
+<li data-w="site.privacy.dont.2">No advertising, and the HUM app does not track you across other apps or websites.</li>
 <li data-w="site.privacy.dont.3">No selling or renting of any data.</li>
 </ul>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.security.title">Security</h2>
-<p data-w="site.privacy.security.1">Everything HUM sends travels encrypted (HTTPS and secure WebSockets). Kept recordings and feedback are stored in private storage that only HUM's servers and its developer can access. Shared songs are stored apart from them, and open only through their links.</p>
+<p data-w="site.privacy.security.1">Everything HUM sends travels encrypted (HTTPS and secure WebSockets). Kept recordings and feedback are stored in private storage that only HUM's servers and its developer can access. Shared songs are stored apart from them, and open only through their links. An account and its copies of your HUMs are kept apart from everything else, and open only to the devices signed in to it.</p>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.rights.title">Your Rights</h2>
-<p data-w="site.privacy.rights.1">Depending on where you live (for example under the GDPR in the EU and UK, or the CCPA in California), you may have the right to access, correct or delete data about you, or to object to its use. Email us and we will respond within 30 days. Since HUM collects nothing linked to your identity, we may ask for details, such as the dates of your takes, that let us find what you are asking about.</p>
+<p data-w="site.privacy.rights.1">Depending on where you live (for example under the GDPR in the EU and UK, or the CCPA in California), you may have the right to access, correct or delete data about you, or to object to its use. Email us and we will respond within 30 days. Apart from an account you chose to make, HUM collects nothing linked to your identity, so we may ask for details, such as the dates of your takes, that let us find what you are asking about. You can erase an account yourself with "Delete Account" in the app.</p>
 </section>
 <section class="doc-card">
 <h2 data-w="site.privacy.children.title">Children</h2>

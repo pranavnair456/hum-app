@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; script-src 'self' 'sha256-wXwuVkff02K7PuhX81eaKwOkyYIY31/TtEjYzaNCnHE=' https://t.whop.tw; connect-src https://t.whop.tw; worker-src blob:">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; font-src 'self'; img-src 'self'; script-src 'self' 'sha256-wXwuVkff02K7PuhX81eaKwOkyYIY31/TtEjYzaNCnHE=' https://t.whop.tw; connect-src https://t.whop.tw; worker-src blob:; base-uri 'none'">
 <meta name="color-scheme" content="light">
 <meta data-w-content="site.home.description" name="description" content="Capture your musical ideas effortlessly.">
 <title data-w="site.home.title">HUM - Your Music, Your Voice</title>
@@ -20,16 +20,19 @@
 </div></header>
 
 <main>
-<section class="hero"><div class="wrap">
-  <div>
-    <h1><span data-w="site.home.heading">HUM</span><span class="tint" data-w="site.home.heading2">Your Music, Your Voice</span></h1>
+<section class="hero sky"><div class="wrap">
+  <div class="words">
+    <h1><span class="word home-head"><span class="just" data-w="site.home.just">Just</span><svg class="logo" viewBox="141 384 742 256" role="img" aria-label="HUM" data-w-label="site.home.heading" focusable="false"><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 493a98 98 0 0 1 196 0"/><rect fill="currentColor" x="384" y="519.5" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="519.5" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M155 425V599M299 425V599M155 512H299M725 599V425L797 546.8L869 425V599"/></svg><span class="it" data-w="site.home.it">It!</span></span><span class="tint home-head" data-w="site.home.heading2">Your Music, Your Voice</span></h1>
     <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
     <a class="policy" href="#promise"><span data-w="site.home.policy">Anti Gen-AI Policy</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
   </div>
-  <div class="flow">
+  <div class="flow up">
     <div class="phone one"><img data-w-alt="site.home.hero.hum" src="shots/hum.jpg" width="600" height="1304" alt="HUM turning a hum into notes as it is hummed"></div>
     <svg class="arrow a2" viewBox="0 0 80 56" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 42c9-17 22-27 33-23 9 3 8 16-1 15-9-1-5-17 10-22 9-3 19-1 27 3"/><path d="M66 7l10 8-12 4"/></svg>
     <div class="phone two"><img data-w-alt="site.home.hero.notes" src="shots/notes.jpg" width="600" height="1304" alt="The hummed notes in HUM's editor, one picked to move or stretch"></div>
+  </div>
+  <div class="flow tilt">
+    <div class="phone"><img data-w-alt="site.home.hero.hum" src="shots/hum.jpg" width="600" height="1304" alt="HUM turning a hum into notes as it is hummed"></div>
   </div>
 </div></section>
 
@@ -49,12 +52,12 @@
       <p class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></p>
     </div>
     <div class="cards">
-      <button class="card" type="button" aria-pressed="true"><h3 data-w="site.home.include.1.title">Hum Any Tune, Get the Notes</h3><p data-w="site.home.include.1.body">Tap once to start, tap again to finish, and watch each note appear as you hum.</p></button>
-      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.2.title">Edit Every Note</h3><p data-w="site.home.include.2.body">Move it, stretch it, cut it, copy it. Every note you hum is yours to shape.</p></button>
-      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.3.title">Music Theory, Optional</h3><p data-w="site.home.include.3.body">Make chord progressions and melodies. Stack chords above your tune or layer them below it.</p></button>
-      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.4.title">Add Multiple Tracks</h3><p data-w="site.home.include.4.body">Layer tracks, loop them and add drums until your idea becomes a song.</p></button>
-      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.5.title">Share Your Songs</h3><p data-w="site.home.include.5.body">Export as a MIDI or audio file, or share with friends so they can add their ideas to your songs.</p></button>
-      <button class="card" type="button" aria-pressed="false"><h3 data-w="site.home.include.6.title">Organize Your Ideas</h3><p data-w="site.home.include.6.body">Store as many songs as you want. Every HUM stays on your phone, ready to play back.</p></button>
+      <button class="card" type="button" aria-pressed="true"><h3 data-w="store.fresh.1.title">Got a Tune Stuck<br> in Your Head?</h3><p data-w="site.home.include.1.body">Tap once to start, tap again to finish, and watch each note appear as you hum.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="store.fresh.2.title">Touch-Screen Editing<br> Made Effortless</h3><p data-w="site.home.include.2.body">Move it, stretch it, cut it, copy it. Every note you hum is yours to shape.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="store.fresh.3.title">Chords &amp; Melodies<br> Without the Theory</h3><p data-w="site.home.include.3.body">Make chord progressions and melodies. Stack chords above your tune or layer them below it.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="store.fresh.4.title">Add Multiple<br> Tracks</h3><p data-w="site.home.include.4.body">Layer tracks, loop them and add drums until your idea becomes a song.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="store.fresh.5.title">Share<br> Your Songs</h3><p data-w="site.home.include.5.body">Export as a MIDI or audio file, or share with friends so they can add their ideas to your songs.</p></button>
+      <button class="card" type="button" aria-pressed="false"><h3 data-w="store.fresh.6.title">Organize<br> Your Ideas</h3><p data-w="site.home.include.6.body">Store as many songs as you want. Every HUM stays on your phone, ready to play back.</p></button>
     </div>
   </div>
 </div></section>
@@ -62,7 +65,7 @@
 <section class="promise" id="promise"><div class="wrap">
   <div>
     <p class="kick" data-w="site.home.promise.kicker">Our Promise</p>
-    <h2 data-w="site.home.promise.heading">HUM Will NEVER Encourage the Use Of Gen-AI In the Creative Process.</h2>
+    <h2 data-w="site.home.promise.heading">HUM Will NEVER Encourage the Use of Gen-AI in the Creative Process.</h2>
     <p class="body" data-w="site.home.promise.body">From the hammerstone to the space rocket, technology will always be a tool meant to serve The Human Creative. Please help us fight against fake art.</p>
   </div>
   <div class="phone"><img data-w-alt="site.home.promise.alt" src="shots/library.jpg" width="600" height="1304" loading="lazy" alt="My HUMs: every song saved, ready to play"></div>
@@ -82,9 +85,9 @@
   <p class="more"><a class="ghost" data-w="site.home.faq.more" href="support">More on Support</a></p>
 </div></section>
 
-<section class="last"><div class="wrap">
+<section class="last sky"><div class="wrap">
   <svg class="mark" viewBox="141 384 742 256" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="21" stroke-linecap="round" d="M414 493a98 98 0 0 1 196 0"/><rect fill="currentColor" x="384" y="519.5" width="60" height="120" rx="30"/><rect fill="currentColor" x="580" y="519.5" width="60" height="120" rx="30"/><path fill="none" stroke="currentColor" stroke-width="28" stroke-linecap="round" stroke-linejoin="round" d="M155 425V599M299 425V599M155 512H299M725 599V425L797 546.8L869 425V599"/></svg>
-  <h2 data-w="site.home.last">Download HUM, Let Your Voice Come To Life.</h2>
+  <h2 data-w="site.home.last">Download HUM, Let Your Voice Come to Life.</h2>
   <span class="badges"><a class="badge" href="https://apps.apple.com/app/id6820010168"><img data-w-alt="site.badge.apple" src="badges/app-store.svg" width="120" height="40" alt="Download on the App Store"></a><button class="badge play" type="button"><img data-w-alt="site.badge.google" src="badges/google-play.png" width="134" height="40" alt="Get it on Google Play"><span class="soon" data-w="site.badge.soon">Coming soon</span></button></span>
 </div></section>
 </main>

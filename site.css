@@ -6,8 +6,14 @@
    App Store screenshots' blue: #2E6CFA at the top to #2765F8 to #1747C9; SF Pro on Apple's devices.
    The App Store previews' rules (the user, 2026-11-09: "Clean up the landing page to account for all ui and design
    principles in the app and the screenshots"): no bold anywhere ("do not bold any text, it is too thick": SF Pro
-   Regular, its own tracking), every heading's words capitalised but a and the (WORDS.md), headings and their lines at
-   the left on one edge, a little more room between a heading's lines; one phone, drawn in the previews' proportions. */
+   Regular, its own tracking), every heading's words capitalised but a and the (WORDS.md), a little more room between a
+   heading's lines; one phone, drawn in the previews' proportions.
+   Decision 599 (the user, 2026-11-10: "Clean up the landing page based on the finished app previews"): the finished
+   previews' rules on Home (tools/previews/fresh.html): headings in Urbanist 500 (fonts/urbanist-wght.ttf, SIL OFL 1.1,
+   fonts/URBANIST-LICENSE), centred, the small words of a title in lower case (WORDS.md); the hero on the previews'
+   blue sky with HUM's faint grid, the logo in white for its word ("Change the HUM text in the header to just be the
+   logo text"). */
+@font-face { font-family: "Urbanist"; src: url("fonts/urbanist-wght.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
 :root {
   --blue: #2765F8;
   --blue-top: #2E6CFA;
@@ -20,9 +26,10 @@
   --row: #F5F6F7;
   --soft: #E6F1FD;
   --blue-on-dark: #9DB8FC; /* DESIGN.md's on-primary-soft: the blue as words on the dark ground */
-  --note: #A0DFD1;
-  --note-line: #00AD81;
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, "Segoe UI", Roboto, sans-serif;
+  --head: "Urbanist", var(--sans); /* decision 599: the previews' type, at 500 */
+  /* the previews' sky (fresh.html's sky()): one gradient top to foot, a light from above */
+  --sky: radial-gradient(1200px 700px at 50% -12%, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0) 70%), linear-gradient(180deg, #3A75FB 0%, #2765F8 38%, #1D55DC 72%, #1747C9 100%);
   --wide: 1200px;
   --gut: 24px;
   --bar-h: 64px;
@@ -94,10 +101,16 @@
 .wrap { max-width: var(--wide); margin: 0 auto; padding: 0 var(--gut); }
 /* no margins of their own (no weight either, so each section's rules set theirs) */
 :where(.home) :is(h1, h2, h3, p) { margin: 0; }
-.home h2 { font-size: clamp(32px, 4.2vw, 48px); line-height: 1.16; font-weight: 400; text-wrap: balance; }
-.sub { color: var(--muted); font-size: 18px; margin-top: 12px; text-wrap: balance; }
+/* decision 599: every heading as the previews set theirs, Urbanist 500, centred (a card's title keeps its card's edge) */
+.home :is(h1, h2, h3, .kick, .sub) { font-family: var(--head); font-weight: 500; }
+.home h2 { font-size: clamp(32px, 4.2vw, 48px); line-height: 1.16; text-wrap: balance; text-align: center; }
+.sub { color: var(--muted); font-size: 19px; margin-top: 12px; text-wrap: balance; text-align: center; }
 section { padding: 96px 0; }
 @media (max-width: 760px) { section { padding: 64px 0; } }
+/* the owner's choice (d) shown in capitals: the words stay WORDS.md's, the capitals are the page's */
+.caps .home-head, .caps.home :is(h2, .card h3, .kick) { text-transform: uppercase; }
+/* the owner's choice (b): the previews' type on every word of the page, the body at Urbanist's regular */
+.type-all.home, .type-all .bar, .type-all .foot, .type-all .home :is(button, summary) { font-family: var(--head); }
 
 /* the badges in the hero and the last word: larger */
 .hero .badges, .last .badges { margin-top: 32px; }
@@ -116,58 +129,61 @@ section { padding: 96px 0; }
   border-radius: 14.14% / 6.51%; object-fit: cover; background: #fff;
 }
 
-/* the hero: words on the left; the mic, the hum and its notes on the right, drawn arrows between */
-.hero { padding: 72px 0 104px; background: radial-gradient(900px 520px at 78% 10%, rgba(39, 101, 248, 0.12), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, #F2F6FF 0%, #FFFFFF 100%); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 32px; align-items: center; } /* the mic gone (the user, 2026-11-10), its room the heading's: "Your Music," on one line */
-/* the words keep the bar's left edge; the mic and the screens run on toward the window's right edge (the user,
-   2026-11-05: "move the singer and preview screenshotes to the right") */
-@media (min-width: 961px) {
-  /* the right gap halfway between the page's edge and the window's (the user: "that was too far to the right ... the
-     middle of the 2 changes would be perfect") */
-  .hero .wrap { max-width: none; padding-left: max(var(--gut), calc((100% - var(--wide)) / 2 + var(--gut)));
-    padding-right: max(var(--gut), calc(((100% - var(--wide)) / 2 + var(--gut) + clamp(var(--gut), 4vw, 64px)) / 2)); }
-}
-/* the store subtitle under the hero's badges, large, in the heading's blue; it opens About (the user, 2026-11-05: "Make
-   anti gen ai policy large text and not in a pill button. clicking on the anti gen ai policy should rerout to the about
-   tab"; "make anti gen ai policy the same blue color as the other font. put it under the download buttons") */
-.policy {
-  display: inline-flex; align-items: center; gap: 0.35em; margin-top: 26px; color: var(--blue); text-decoration: none;
-  font-size: clamp(22px, 2.5vw, 30px); line-height: 1.2; font-weight: 400;
-}
-.policy span { background: linear-gradient(90deg, var(--blue-top), var(--blue-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.policy svg { width: 0.85em; height: 0.85em; flex: none; transition: transform 160ms ease; }
-.policy:hover span { text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 0.15em; }
-.policy:hover svg { transform: translateX(3px); }
-.hero .badges + .policy { display: flex; width: max-content; }
-.hero h1 { margin-top: 0; font-size: clamp(44px, 6vw, 76px); line-height: 1.12; font-weight: 400; }
-.hero h1 span { display: block; text-wrap: balance; }
-.hero h1 .tint { background: linear-gradient(90deg, var(--blue-top), var(--blue-deep)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: 0.06em; }
-/* the hero's right: one row, evenly spaced (the user, 2026-11-05: "add another squiggly arrow from the singer to the
-   first screen, and make the original squiggly arrow ... spaced more evenly between the 2 screen previews"): the mic,
-   an arrow, the hum, an arrow, its notes; each arrow its own item in the row, so it sits midway between its neighbours.
-   The mic is the App Store previews' (the user, 2026-11-09: "Remove the icon singer in the landing page and replace it
-   with the same mic icon used in the app preview screenshots"), in HUM's blue on the white: the hum button, its speaker
-   waves and three notes fading out toward the screens */
-/* to the right edge, away from the words (the user: "move those 3 images together to the right to make the screen less
-   crowded") */
-.flow { display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
-.flow .arrow { flex: none; width: 60px; height: 42px; color: var(--blue); }
-.flow .phone { flex: none; width: 200px; }
-/* the two screens stand straight (the user, 2026-11-06: "why are the 2 image qualities sso different. first is far better"):
-   a 4° turn resamples every pixel, and the editor's thin grid lines and small words blur at 182 px wide on a 1x screen,
-   while the hum's few big shapes do not; upright, both are drawn pixel for pixel from the same 600 px shots */
-.flow .a2 { transform: translateY(-30px); }
-@media (max-width: 960px) {
-  /* the words at the left on a phone too (the previews' rule), the pictures' row under them */
-  .hero .wrap { grid-template-columns: 1fr; }
-  /* one row inside a phone's width: 18 + 7 + 26 + 7 + 26 vw and four 1.6 vw gaps */
-  .flow { justify-content: center; gap: 1.6vw; padding-top: 48px; }
-  .flow .arrow { width: min(7vw, 60px); height: auto; }
-  .flow .phone { width: min(26vw, 210px); }
+/* HUM's grid, very faint, fading in toward the foot (the previews' #grid): a column line every eighth of the band, the
+   rows' soft bands half a column high */
+.sky { position: relative; isolation: isolate; color: #fff; background: var(--sky); overflow: hidden; }
+.sky::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; --col: calc(min(100vw, 1600px) / 8);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.04) 50%, transparent 50%);
+  background-size: var(--col) 100%, 100% var(--col); background-position: calc(50% - var(--col) / 2) 0, 0 0;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.75) 70%, #000 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.75) 70%, #000 100%);
 }
 
-/* What Does HUM Include?: six cards, the App Store previews' screens (no Use Any Instrument, the user, 2026-11-09); the
-   phone shows the screen of the card picked */
+/* the hero: the previews' first shot on a page: the logo for HUM's word, the line under it, the badges and the policy,
+   centred over the screens */
+.hero { padding: 72px 0 96px; }
+.hero .wrap, .hero .words { display: grid; justify-items: center; text-align: center; }
+.hero h1 { display: grid; justify-items: center; gap: 22px; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.12; }
+/* the logo as the heading's word (decision 481's mark, white on the sky; "HUM" its name for VoiceOver) */
+.hero .word { display: flex; align-items: baseline; justify-content: center; }
+.hero .word .logo { display: block; height: clamp(68px, 9.4vw, 124px); width: auto; color: #fff; overflow: visible; }
+.hero .word .just, .hero .word .it { display: none; }
+/* the owner's choice (a): "Just HUM It!" (WORDS.md's store.fresh.1.hum), the logo as its HUM, its H and M on the words'
+   cap height and baseline (Urbanist's cap 0.7 em; the logo's letters 174 of its 256 units, 41 under the baseline) */
+.hero-just .hero .word { font-size: clamp(46px, 7.4vw, 104px); line-height: 1; }
+.hero-just .hero .word .just, .hero-just .hero .word .it { display: inline; }
+.hero-just .hero .word .logo { display: inline-block; height: calc(0.7em * 256 / 174); margin: 0 0.36em 0 0.4em; transform: translateY(calc(0.7em * 41 / 174)); }
+.hero h1 .tint { display: block; color: #fff; text-wrap: balance; }
+/* the store subtitle under the hero's badges, large, the words' white on the sky; it opens Our promise (the user,
+   2026-11-05: "Make anti gen ai policy large text and not in a pill button"; 2026-11-06: "the anti gen ai policy button
+   should route to the: Our promise ... part of the page") */
+.policy {
+  display: inline-flex; align-items: center; gap: 0.35em; margin-top: 26px; color: #fff; text-decoration: none;
+  font-family: var(--head); font-weight: 500; font-size: clamp(22px, 2.5vw, 30px); line-height: 1.2;
+}
+.policy svg { width: 0.85em; height: 0.85em; flex: none; transition: transform 160ms ease; }
+.policy:hover span { text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.7); text-underline-offset: 0.15em; }
+.policy:hover svg { transform: translateX(3px); }
+/* the screens: the hum, an arrow, its notes landed, upright (the user, 2026-11-06: a turned screen blurs on a 1x
+   screen), centred under the words */
+.flow { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 56px; }
+.flow .arrow { flex: none; width: 64px; height: 45px; color: #fff; transform: translateY(-30px); }
+.flow .phone { flex: none; width: 236px; box-shadow: 0 0 0 2px #5A5E68, 0 0 0 3px #2A2C31, 0 40px 90px rgba(6, 18, 64, 0.42), 0 12px 30px rgba(6, 18, 64, 0.26); }
+.flow.tilt { display: none; }
+/* the owner's choice (c): the previews' tilted phone (shots 1 and 2), turned 8°, running off the sky's foot */
+.hero-tilt .hero { padding-bottom: 0; }
+.hero-tilt .flow.up { display: none; }
+.hero-tilt .flow.tilt { display: flex; height: clamp(330px, 46vw, 560px); align-items: flex-start; margin-top: 64px; }
+.hero-tilt .flow.tilt .phone { width: clamp(230px, 29vw, 360px); transform: rotate(8deg); transform-origin: 50% 0; }
+@media (max-width: 760px) {
+  .flow { gap: 2.4vw; margin-top: 44px; }
+  .flow .arrow { width: min(9vw, 60px); height: auto; }
+  .flow .phone { width: min(36vw, 210px); }
+}
+
+/* What Does HUM Include?: six cards, the six previews' headlines (store.fresh.*: their line breaks are the shots'; a card
+   wraps by its own width); the phone shows the screen of the card picked */
 .include { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FF 100%); }
 .include .grid { margin-top: 56px; display: grid; grid-template-columns: 1fr 1.25fr; gap: 56px; align-items: center; }
 .show { display: grid; justify-items: center; gap: 18px; }
@@ -184,6 +200,8 @@ section { padding: 96px 0; }
   transition: border-color 160ms ease, background 160ms ease;
 }
 .card h3 { font-size: 19px; line-height: 1.3; font-weight: 400; }
+.include .card h3 { font-size: 21px; line-height: 1.25; text-wrap: balance; }
+.include .card h3 br { display: none; }
 .card p { margin-top: 4px; color: var(--muted); font-size: 15px; line-height: 1.5; }
 .card[aria-pressed="true"] { background: var(--soft); border-color: var(--blue); }
 .card[aria-pressed="true"] h3 { color: var(--blue); }
@@ -198,29 +216,30 @@ section { padding: 96px 0; }
   .dots i.on { width: 14px; }
   .card { padding: 12px 14px; border-radius: 16px; }
   .card h3 { font-size: 17px; }
+  .include .card h3 { font-size: 18px; }
   .card p { font-size: 14px; }
 }
 
-/* the promise: the app's dark end, the words left, My HUMs on a phone right, upright as the hero's (a turn blurs a
-   1x screen) */
+/* the promise: the app's dark end, its words centred over My HUMs on a phone, upright as the hero's (a turn blurs a 1x
+   screen) */
 /* Anti Gen-AI Policy under the hero's badges lands here (the user, 2026-11-06: "the anti gen ai policy button should route
    to the: Our promise ... part of the page"), its top clear of the sticky bar */
 #promise { scroll-margin-top: var(--bar-h); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
-.promise { background: radial-gradient(800px 500px at 80% 40%, rgba(39, 101, 248, 0.35), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, var(--navy-up), var(--navy)); color: #fff; overflow: hidden; }
-.promise .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+.promise { background: radial-gradient(800px 500px at 50% 80%, rgba(39, 101, 248, 0.35), rgba(39, 101, 248, 0) 70%), linear-gradient(180deg, var(--navy-up), var(--navy)); color: #fff; overflow: hidden; }
+.promise .wrap { display: grid; justify-items: center; text-align: center; gap: 48px; }
+.promise .wrap > div { max-width: 860px; }
 /* no green words on the site (the user, 2026-11-06: "change our promise font color to match the white/ blue theme. i
    never want any green text like this on the website") */
-.kick { font-size: 19px; font-weight: 400; color: var(--blue-on-dark); }
+.kick { font-size: 21px; color: var(--blue-on-dark); }
 .promise h2 { margin-top: 12px; color: #fff; }
-.promise p.body { margin-top: 20px; font-size: 19px; color: #C9D4F0; max-width: 32em; }
-.promise .phone { width: 290px; justify-self: center; box-shadow: 0 0 0 2px #5A5E68, 0 0 0 3px #2A2C31, 0 40px 90px rgba(0, 0, 0, 0.55); }
-@media (max-width: 960px) { .promise .wrap { grid-template-columns: 1fr; } .promise .phone { width: min(64vw, 280px); margin-top: 24px; } }
+.promise p.body { margin: 20px auto 0; font-size: 19px; color: #C9D4F0; max-width: 32em; }
+.promise .phone { width: 270px; box-shadow: 0 0 0 2px #5A5E68, 0 0 0 3px #2A2C31, 0 40px 90px rgba(0, 0, 0, 0.55); }
+@media (max-width: 960px) { .promise .phone { width: min(64vw, 270px); } }
 
 /* the questions: Support's and the Privacy Policy's answers, one tap each */
 .faq { background: linear-gradient(180deg, #FFFFFF 0%, #F5F8FF 100%); }
-/* the heading, its line and More on Support on the questions' own left edge */
-.faq h2, .faq .sub, .faq .more { max-width: 780px; margin-left: auto; margin-right: auto; }
+.faq h2, .faq .sub { max-width: 780px; margin-left: auto; margin-right: auto; }
 .qs { max-width: 780px; margin: 48px auto 0; display: grid; gap: 12px; }
 .qs details { background: #fff; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--lift); }
 .qs summary {
@@ -235,15 +254,12 @@ section { padding: 96px 0; }
 .qs details[open] summary::after { transform: rotate(180deg); }
 .qs details p { padding: 0 24px 22px; margin: -6px 0 0; color: var(--muted); font-size: 16px; }
 .qs a { color: var(--blue); }
-.faq .more { margin-top: 28px; display: flex; justify-content: flex-start; }
+.faq .more { margin-top: 28px; display: flex; justify-content: center; }
 .ghost { color: var(--ink); text-decoration: none; font-weight: 400; font-size: 16px; border: 1.5px solid var(--line); background: #fff; border-radius: 999px; padding: 12px 22px; }
 .ghost:hover { border-color: var(--blue); color: var(--blue); }
 
-/* the last word: the screenshots' blue, the logo in white */
-.last {
-  color: #fff;
-  background: radial-gradient(1000px 600px at 20% -10%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 70%), linear-gradient(180deg, var(--blue-top) 0%, var(--blue) 40%, var(--blue-deep) 100%);
-}
+/* the last word: the previews' sky and grid, the logo in white, centred */
+.last .wrap { display: grid; justify-items: center; text-align: center; }
 .last .mark { display: block; height: 64px; width: auto; color: #fff; }
 .last h2 { margin: 28px 0 0; color: #fff; max-width: 14em; }
 
@@ -258,7 +274,6 @@ section { padding: 96px 0; }
 .doc-hero > * { max-width: calc(820px - 2 * var(--gut)); margin-left: auto; margin-right: auto; }
 .doc-hero h1 { margin-top: 0; margin-bottom: 0; font-size: clamp(40px, 6vw, 64px); line-height: 1.12; font-weight: 400; text-wrap: balance; }
 .doc-hero .muted { margin-top: 14px; margin-bottom: 0; color: var(--muted); font-size: 16px; }
-.doc-lede { margin-top: 20px; margin-bottom: 0; font-size: 18px; text-wrap: pretty; }
 .doc-body { max-width: 820px; margin: 0 auto; padding: 0 var(--gut) 88px; display: grid; gap: 14px; }
 .doc-card { background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; box-shadow: var(--lift); }
 .doc-card h2 { margin: 0 0 10px; font-size: 22px; line-height: 1.3; font-weight: 400; }
@@ -267,7 +282,7 @@ section { padding: 96px 0; }
 .doc-card ul { margin: 10px 0; padding-left: 20px; }
 .doc-card li::marker { color: var(--blue); }
 .doc-card .muted { color: var(--muted); font-size: 15px; }
-.doc-card a, .doc-lede a { color: var(--blue); }
+.doc-card a { color: var(--blue); }
 /* a question's opening words: the ink's darker colour, not bold (no bold anywhere) */
 .doc-card strong { font-weight: 400; color: var(--ink); }
 @media (max-width: 760px) { .doc-hero { padding: 48px var(--gut) 32px; } .doc-card { padding: 22px 20px; border-radius: 20px; } }
@@ -275,3 +290,22 @@ section { padding: 96px 0; }
 /* ---------- About: the old home page, its stage under the bar ---------- */
 .about .bar { position: fixed; left: 0; right: 0; }
 .about .stage { top: var(--bar-h); }
+
+/* ---------- Get Pro (decision 582) ---------- */
+/* hummusic.app/pro: the Privacy page's frame; the plans are Home's pressable cards, the buttons its ghost pill. A part
+   the page has no word for yet stays hidden whatever its class says */
+.pro [hidden] { display: none !important; }
+.pro .card h3, .pro .card p { margin: 0; }
+.pro .card p { margin-top: 4px; }
+.pro .card .pro-off { margin-left: 6px; color: var(--blue); font-size: 15px; }
+.pro-sign p, .pro-warn { margin: 18px 0 0; }
+.pro-pair { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+.pro-go { display: grid; justify-items: start; gap: 10px; margin-top: 18px; }
+.pro-go .muted { margin: 0; }
+.pro button.ghost { font: inherit; font-size: 16px; cursor: pointer; }
+.pro button.ghost:disabled { opacity: 0.5; cursor: default; }
+/* the one way to pay: the pill filled with the blue */
+.pro .ghost.fill, .pro .ghost.fill:hover { background: var(--blue); border-color: var(--blue); color: #fff; }
+.pro-links { margin: 4px 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); font-size: 15px; }
+.pro-links a { color: var(--blue); }
+.pro-links .ghost { margin-left: auto; }
